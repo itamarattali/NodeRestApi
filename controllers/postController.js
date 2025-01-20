@@ -1,6 +1,5 @@
 const Post = require('../models/post');
 
-// Add a New Post
 exports.addPost = async (req, res) => {
     try {
         const post = new Post(req.body);
@@ -11,7 +10,6 @@ exports.addPost = async (req, res) => {
     }
 };
 
-// Get All Posts
 exports.getAllPosts = async (req, res) => {
     try {
         const posts = await Post.find();
@@ -21,7 +19,6 @@ exports.getAllPosts = async (req, res) => {
     }
 };
 
-// Get Post by ID
 exports.getPostById = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
@@ -32,7 +29,6 @@ exports.getPostById = async (req, res) => {
     }
 };
 
-// Get Posts by Sender
 exports.getPostsBySender = async (req, res) => {
     try {
         const posts = await Post.find({ sender: req.query.sender });
