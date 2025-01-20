@@ -1,0 +1,15 @@
+### Posts API
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "My First Post",
+    "content": "This is the content of my first post.",
+    "sender": "User123"
+}
+
+GET http://localhost:3000/posts
+
+GET http://localhost:3000/posts/<post_id>
+
+GET http://localhost:3000/posts?sender=<sender_id>
