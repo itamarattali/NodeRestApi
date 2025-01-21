@@ -3,11 +3,12 @@ const mongoose = require('./database/connection');
 const postRoutes = require('./routes/postRoutes');
 
 const app = express();
-const PORT = 3000;
+const dotenv = require("dotenv").config();
+const port = process.env.PORT;
 
 app.use(express.json());
 app.use('/posts', postRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
