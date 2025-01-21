@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const dbPath = process.env.DB_PATH;
 
-mongoose.connect('mongodb://localhost:27017/nodeRestApi', {
+mongoose.connect(dbPath, {
     useNewUrlParser: true,
 }).then(() => {
     console.log('Connected to MongoDB');
