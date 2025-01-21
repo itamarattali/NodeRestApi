@@ -1,0 +1,24 @@
+### Posts API
+
+# Add a New Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "My First Post",
+    "content": "This is the content of my first post.",
+    "sender": "User123",
+    "createdAt": "2025-01-14T00:00:00Z"
+}
+
+###
+# Get All Posts
+GET http://localhost:3000/posts
+
+###
+# Get Post by ID
+GET http://localhost:3000/posts/<post_id>
+
+###
+# Get Posts by Sender
+GET http://localhost:3000/posts?sender=<sender_id>

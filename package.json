@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/itamarattali/NodeRestApi/issues"
   },
-  "homepage": "https://github.com/itamarattali/NodeRestApi#readme"
+  "homepage": "https://github.com/itamarattali/NodeRestApi#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "4.18.2",
+    "mongoose": "7.2.2"
+  }
 }
