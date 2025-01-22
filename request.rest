@@ -1,5 +1,4 @@
 ### Posts API
-
 # Add a New Post
 POST http://localhost:3000/posts
 Content-Type: application/json
@@ -7,18 +6,24 @@ Content-Type: application/json
 {
     "title": "My First Post",
     "content": "This is the content of my first post.",
-    "sender": "User123",
-    "createdAt": "2025-01-14T00:00:00Z"
+    "sender": "User123"
 }
-
 ###
 # Get All Posts
 GET http://localhost:3000/posts
-
 ###
-# Get Post by ID
+# Get a Post by ID
 GET http://localhost:3000/posts/<post_id>
-
 ###
 # Get Posts by Sender
-GET http://localhost:3000/posts?sender=<sender_id>
+GET http://localhost:3000/post?sender=<sender_id>
+###
+# Update a Post
+PUT http://localhost:3000/post/<post_id>
+Content-Type: application/json
+
+{
+    "title": "Updated Post Title",
+    "content": "This is the updated content.",
+    "sender": "User123"
+}
