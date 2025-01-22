@@ -11,5 +11,6 @@ router.get('/', (req, res) => {
     }
 });
 router.get('/:id', postController.getPostById);
+router.put('/:id', postController.updatePost);
 
 module.exports = router;
