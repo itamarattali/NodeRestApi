@@ -23,7 +23,7 @@ GET http://localhost:3000/posts?sender=<sender_id>
 
 ###
 # Update a Post
-PUT http://localhost:3000/post/<post_id>
+PUT http://localhost:3000/posts/<post_id>
 Content-Type: application/json
 
 {
