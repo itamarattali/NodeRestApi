@@ -1,6 +1,7 @@
 const express = require('express');
 const postRoutes = require('./routes/postRoutes');
 const commentRoutes = require('./routes/commentRoutes');
+require('./database/connection');
 
 const app = express();
 const dotenv = require("dotenv").config();
