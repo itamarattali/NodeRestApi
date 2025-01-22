@@ -1,6 +1,5 @@
 const Comment = require('../models/comment');
 
-// Add a New Comment
 exports.addComment = async (req, res) => {
     try {
         const comment = new Comment(req.body);
@@ -11,7 +10,6 @@ exports.addComment = async (req, res) => {
     }
 };
 
-// Get All Comments
 exports.getAllComments = async (req, res) => {
     try {
         const comments = await Comment.find();
@@ -21,7 +19,16 @@ exports.getAllComments = async (req, res) => {
     }
 };
 
-// Get Comments by Post ID
+exports.getCommentById = async (req, res) => {
+    try {
+        const comment = await Comment.findById(req.params.id);
+        if (!comment) return res.status(404).json({ error: 'Comment not found' });
+        res.json(comment);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
 exports.getCommentsByPostId = async (req, res) => {
     try {
         const comments = await Comment.find({ postId: req.params.postId });
@@ -31,7 +38,6 @@ exports.getCommentsByPostId = async (req, res) => {
     }
 };
 
-// Update a Comment
 exports.updateComment = async (req, res) => {
     try {
         const comment = await Comment.findByIdAndUpdate(
@@ -46,7 +52,6 @@ exports.updateComment = async (req, res) => {
     }
 };
 
-// Delete a Comment
 exports.deleteComment = async (req, res) => {
     try {
         const comment = await Comment.findByIdAndDelete(req.params.id);
