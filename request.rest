@@ -1,5 +1,4 @@
 ### Posts API
-
 # Add a New Post
 POST http://localhost:3000/posts
 Content-Type: application/json
@@ -7,8 +6,7 @@ Content-Type: application/json
 {
     "title": "My First Post",
     "content": "This is the content of my first post.",
-    "sender": "User123",
-    "createdAt": 2025-01-14T00:00:00Z"
+    "sender": "User123"
 }
 
 ###
@@ -24,7 +22,18 @@ GET http://localhost:3000/posts/<post_id>
 GET http://localhost:3000/posts?sender=<sender_id>
 
 ###
-# Add a New Comment
+# Update a Post
+PUT http://localhost:3000/post/<post_id>
+Content-Type: application/json
+
+{
+    "title": "Updated Post Title",
+    "content": "This is the updated content.",
+    "sender": "User123"
+}
+
+###
+# Add New Comment
 POST http://localhost:3000/comments
 Content-Type: application/json
 
