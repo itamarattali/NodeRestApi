@@ -8,7 +8,7 @@ Content-Type: application/json
     "title": "My First Post",
     "content": "This is the content of my first post.",
     "sender": "User123",
-    "createdAt": "2025-01-14T00:00:00Z"
+    "createdAt": 2025-01-14T00:00:00Z"
 }
 
 ###
@@ -22,3 +22,34 @@ GET http://localhost:3000/posts/<post_id>
 ###
 # Get Posts by Sender
 GET http://localhost:3000/posts?sender=<sender_id>
+
+###
+# Add a New Comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "postId": "<post_id>",
+    "content": "This is a comment on the post."
+}
+
+###
+# Get All Comments
+GET http://localhost:3000/comments
+
+###
+# Get Comments by Post ID
+GET http://localhost:3000/comments/<post_id>
+
+###
+# Update Comment by ID
+PUT http://localhost:3000/comments/<comment_id>
+Content-Type: application/json
+
+{
+    "content": "Updated comment content."
+}
+
+###
+# Delete Comment by ID
+DELETE http://localhost:3000/comments/<comment_id>
